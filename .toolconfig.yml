@@ -1,0 +1,44 @@
+# liteparse — VA 工具捆绑配置
+# 规范：docs/va-bundling-v2/SPEC.md
+
+schema_version: 1
+tool_name: liteparse
+api_version: "1.0"
+ha_compatibility: ">=2.5,<3.0"
+
+# 6 个维度
+execution_mode: P
+scope: HA-VA-shared
+multi_tenant: single
+deployment: local
+
+# 入口
+entry_point: bin/liteparse-cli
+
+# 模式 P 配置
+python_version: "3.12"
+venv_path: .venv
+requirements_source: packages/python/pyproject.toml
+
+# 数据目录
+data_dir: .data
+data_subdirs: []
+
+# 环境变量需求
+env_vars: []
+
+# HA 注册
+ha_registration:
+  source: va-liteparse
+  owner: va-shared
+  tools_count: 2
+  category: va-document
+
+# 健康检查
+health_check:
+  command: bin/liteparse-cli health
+  output_format: json
+  timeout_seconds: 5
+  required_fields:
+    - status
+    - liteparse_version
