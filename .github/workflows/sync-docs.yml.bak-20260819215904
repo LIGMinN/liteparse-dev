@@ -1,5 +1,9 @@
 name: Sync Docs to Developer Hub
 on:
+  push:
+    branches: [main]
+    paths:
+      - "docs/**"
   workflow_dispatch:
 jobs:
   sync-docs:

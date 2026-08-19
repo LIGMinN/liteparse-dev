@@ -1,7 +1,12 @@
 name: E2E Output Validation
 
 on:
-  workflow_dispatch:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+# For PRs, we need write permissions to add labels
 permissions:
   contents: read
   pull-requests: write

@@ -1,7 +1,11 @@
 name: Deploy Demo to GitHub Pages
 
 on:
+  push:
+    branches: [main]
+    paths: [wasm-demo-site/**]
   workflow_dispatch:
+
 permissions:
   contents: read
   pages: write
