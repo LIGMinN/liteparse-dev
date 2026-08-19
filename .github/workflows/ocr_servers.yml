@@ -1,8 +1,7 @@
 name: Validate OCR Servers
 
 on:
-  pull_request:
-
+  workflow_dispatch:
 jobs:
   testing_paddleocr:
     runs-on: ubuntu-latest
