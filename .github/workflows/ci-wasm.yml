@@ -1,23 +1,7 @@
 name: CI - WASM Bindings
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'crates/**'
-      - 'packages/wasm/**'
-      - 'scripts/browser-compat/**'
-      - 'scripts/edge-compat/**'
-      - '.github/workflows/ci-wasm.yml'
-  pull_request:
-    branches: [main]
-    paths:
-      - 'crates/**'
-      - 'packages/wasm/**'
-      - 'scripts/browser-compat/**'
-      - 'scripts/edge-compat/**'
-      - '.github/workflows/ci-wasm.yml'
-
+  workflow_dispatch:
 env:
   CARGO_TERM_COLOR: always
 
