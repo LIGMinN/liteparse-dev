@@ -1,19 +1,7 @@
 name: CI - Python Bindings
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'crates/**'
-      - 'packages/python/**'
-      - '.github/workflows/ci-python.yml'
-  pull_request:
-    branches: [main]
-    paths:
-      - 'crates/**'
-      - 'packages/python/**'
-      - '.github/workflows/ci-python.yml'
-
+  workflow_dispatch:
 env:
   CARGO_TERM_COLOR: always
 
