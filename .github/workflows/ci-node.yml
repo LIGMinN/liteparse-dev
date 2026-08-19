@@ -1,19 +1,7 @@
 name: CI - Node Bindings
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - "crates/**"
-      - "packages/node/**"
-      - ".github/workflows/ci-node.yml"
-  pull_request:
-    branches: [main]
-    paths:
-      - "crates/**"
-      - "packages/node/**"
-      - ".github/workflows/ci-node.yml"
-
+  workflow_dispatch:
 env:
   CARGO_TERM_COLOR: always
 
